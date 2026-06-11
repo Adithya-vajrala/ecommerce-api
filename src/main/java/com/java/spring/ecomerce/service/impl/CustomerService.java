@@ -1,10 +1,9 @@
 package com.java.spring.ecomerce.service.impl;
 
-import com.java.spring.ecomerce.enums.Gender;
 import com.java.spring.ecomerce.enums.Status;
 import com.java.spring.ecomerce.exception.CustomerAlreadyExistsException;
 import com.java.spring.ecomerce.exception.CustomerNotFoundException;
-import com.java.spring.ecomerce.model.Customer;
+import com.java.spring.ecomerce.entity.Customer;
 import com.java.spring.ecomerce.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

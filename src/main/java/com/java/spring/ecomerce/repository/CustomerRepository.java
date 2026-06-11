@@ -1,6 +1,6 @@
 package com.java.spring.ecomerce.repository;
 
-import com.java.spring.ecomerce.model.Customer;
+import com.java.spring.ecomerce.entity.Customer;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

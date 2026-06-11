@@ -1,9 +1,7 @@
 package com.java.spring.ecomerce.controller;
 
 
-import com.java.spring.ecomerce.exception.CustomerAlreadyExistsException;
-import com.java.spring.ecomerce.exception.CustomerNotFoundException;
-import com.java.spring.ecomerce.model.Customer;
+import com.java.spring.ecomerce.entity.Customer;
 import com.java.spring.ecomerce.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,13 +24,7 @@ public class CustomerController {
         //1. Throw CustomerExistsException if customer exists
         //2. save customer
         //3. return saved customer
-        try {
             return ResponseEntity.status(HttpStatus.CREATED).body(customerService.add(customer));
-        } catch (CustomerAlreadyExistsException ex) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
-        } catch (Exception ex) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
-        }
         //ResponseEntity Types
         /*
         201 Created -> ResponseEntity<Customer>

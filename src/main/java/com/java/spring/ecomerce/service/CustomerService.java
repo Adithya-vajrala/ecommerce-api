@@ -2,7 +2,7 @@ package com.java.spring.ecomerce.service;
 
 import com.java.spring.ecomerce.exception.CustomerAlreadyExistsException;
 import com.java.spring.ecomerce.exception.CustomerNotFoundException;
-import com.java.spring.ecomerce.model.Customer;
+import com.java.spring.ecomerce.entity.Customer;
 
 import java.util.List;
 

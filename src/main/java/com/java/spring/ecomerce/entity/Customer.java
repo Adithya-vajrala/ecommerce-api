@@ -1,7 +1,8 @@
-package com.java.spring.ecomerce.model;
+package com.java.spring.ecomerce.entity;
 import com.java.spring.ecomerce.enums.Gender;
 import com.java.spring.ecomerce.enums.Status;
 import lombok.Data;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.time.LocalDateTime;
 
