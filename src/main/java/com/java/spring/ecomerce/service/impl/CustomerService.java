@@ -33,7 +33,7 @@ public class CustomerService implements com.java.spring.ecomerce.service.Custome
     }
 
     @Override
-    public Customer update(Customer customer) throws ClassNotFoundException {
+    public Customer update(Customer customer) throws CustomerNotFoundException {
         repository.findById(customer.getId()).orElseThrow(()->{
             throw new CustomerNotFoundException("Customer not found with this id" + customer.getId());
         });

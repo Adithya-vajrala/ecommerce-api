@@ -49,36 +49,21 @@ public class CustomerController {
     }
     //http://localhost:8080/api/customers/1
     @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable int id){
-        try {
+    public ResponseEntity<Customer> getById(@PathVariable int id){
             return ResponseEntity.ok(customerService.getById(id));
-        } catch(CustomerNotFoundException ex){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-        } catch(Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
-        }
     }
     @PutMapping
-    public ResponseEntity<?> update(@RequestBody Customer customer){
-        try {
+    public ResponseEntity<Customer> update(@RequestBody Customer customer) {
+
             return ResponseEntity.ok(customerService.update(customer));
-        } catch(CustomerNotFoundException ex){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-        } catch(Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
-        }
+
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable int id){
-        try {
+    public ResponseEntity<Void> delete(@PathVariable int id){
+
             customerService.deleteById(id);
             return ResponseEntity.noContent().build();
-        } catch(CustomerNotFoundException ex){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-        } catch(Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
-        }
     }
 
     /*

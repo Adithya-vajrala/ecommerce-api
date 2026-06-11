@@ -9,7 +9,7 @@ import java.util.List;
 public interface CustomerService {
     Customer add(Customer customer) throws CustomerAlreadyExistsException;
     Customer getById(int id) throws CustomerNotFoundException;
-    Customer update(Customer customer) throws ClassNotFoundException;
+    Customer update(Customer customer) throws CustomerNotFoundException;
     List<Customer> getAll();
     void deleteById(int id) throws CustomerNotFoundException ;
 }
